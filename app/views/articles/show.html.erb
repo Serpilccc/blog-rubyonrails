@@ -1,0 +1,18 @@
+<h1>mon article!</h1>
+<h2> <%= @article.title %> </h2>
+
+<h3>Ajouter un commentaire</h3>>
+
+<%= form_tag article_comments_path(@article) do %>
+<%= label_tag 'commenter', 'Pseudo du commentateur' %>
+  <%= text_field_tag 'commmenter' %>
+ 
+  <%= label_tag 'text', 'Corpus' %>
+  <%= text_area_tag 'text' %>
+
+  <%= submit_tag "Creer un nouvel article"%>
+<% end %>
+
+<p> <%= link_to("Editer l article", edit_article_path) %></p>
+
+<p> <%= link_to("revenir à la liste des articles", articles_path) %></p>

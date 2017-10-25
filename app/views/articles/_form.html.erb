@@ -1,0 +1,19 @@
+<% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <%= label_tag 'title', 'titre de l\' article' %>
+  <%= text_field_tag 'title' %>
+ 
+  <%= label_tag 'text', 'Corpus' %>
+  <%= text_area_tag 'text' %>
